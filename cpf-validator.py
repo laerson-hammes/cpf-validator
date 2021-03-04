@@ -3,9 +3,9 @@ def validate_digit(digit, code, position):
       if not position + 1 == len(code):
          validation(code, 10)
       else:
-         print(f"{True}")
+         print(f"[+] {True}")
    else:
-      print(f"{False}")
+      print(f"[-] {False}")
      
 def list_generator(code):
    return list(range(len(code) + 1, 1, -1))
