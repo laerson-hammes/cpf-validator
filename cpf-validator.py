@@ -1,4 +1,4 @@
-def validateDigit(digit, code, position):
+def validate_digit(digit, code, position):
    if int(code[position]) == digit:
       if not position + 1 == len(code):
          validation(code, 10)
@@ -7,22 +7,22 @@ def validateDigit(digit, code, position):
    else:
       print(f"{False}")
      
-def listGenerator(code):
+def list_generator(code):
    return list(range(len(code) + 1, 1, -1))
 
 def validation(code, position):
-   result = listGenerator(code[:position])
+   result = list_generator(code[:position])
    calc = []
    for number in range(0, len(result), + 1):
       calc.append(int(code[number]) * int(result[number]))
    digit = (sum(calc)) % 11
    if digit < 2:
-      validateDigit(digit, code, position)
+      validate_digit(digit, code, position)
    else:
       digit = 11 - digit
-      validateDigit(digit, code, position)
+      validate_digit(digit, code, position)
    
-def verifyInput(code):
+def verify_input(code):
    if len(code) == 11:
       validation(code, 9)
    else:
@@ -32,8 +32,8 @@ def verifyInput(code):
       if len(code) != 11:
          print("[-] ERROR")
       else:
-         verifyInput(code)
+         verify_input(code)
             
    
 code = str(input("[+] CPF: "))
-verifyInput(list(code))
+verify_input(list(code))
