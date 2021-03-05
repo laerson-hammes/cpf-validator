@@ -7,8 +7,7 @@ def validate_digit(digit, code, position):
    else:
       print(f"[-] {False}")
      
-def list_generator(code):
-   return list(range(len(code) + 1, 1, -1))
+listGenerator = lambda code: list(range(len(code) + 1, 1, -1))
 
 def validation(code, position):
    result = list_generator(code[:position])
