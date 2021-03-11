@@ -6,8 +6,10 @@ def validate_digit(digit, code, position):
          print(f"[+] {True}")
    else:
       print(f"[-] {False}")
-     
+
+      
 list_generator = lambda code: list(range(len(code) + 1, 1, -1))
+
 
 def validation(code, position):
    result = list_generator(code[:position])
@@ -20,6 +22,7 @@ def validation(code, position):
    else:
       digit = 11 - digit
       validate_digit(digit, code, position)
+   
    
 def verify_input(code):
    if len(code) == 11:
