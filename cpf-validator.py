@@ -13,16 +13,12 @@ list_generator = lambda code: list(range(len(code) + 1, 1, -1))
 
 def validation(code, position):
    result = list_generator(code[:position])
-   calc = []
-   for number in range(0, len(result), + 1):
-      calc.append(int(code[number]) * int(result[number]))
+   calc = [int(code[number]) * int(result[number]) for number in range(0, len(result), +1)]
    digit = (sum(calc)) % 11
-   if digit < 2:
-      validate_digit(digit, code, position)
-   else:
+   if digit >= 2:
       digit = 11 - digit
-      validate_digit(digit, code, position)
-   
+   validate_digit(digit, code, position)
+
    
 def verify_input(code):
    if len(code) == 11:
